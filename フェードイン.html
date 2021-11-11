@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* CSSアニメーションの指定 */
+      .l-wrapper {
+        max-width: 700px;
+        width: 100%;
+        padding-top: 50px;
+        margin: 0 auto;
+      }
+
+      /* アニメーションするとこ */
+      .l-section {
+        height: 600px;
+        background: pink;
+        margin-bottom: 30px;
+        opacity: 0;
+        transform: translate3d(0, 100px, 0);
+        transition: opacity 1.5s, transform 1.5s;
+      }
+
+      /* 1つめ赤くする */
+      .l-section.is-bgColor--red {
+        background: #e4357b;
+      }
+      /* 2つめ青くする */
+      .l-section.is-bgColor--blue {
+        background: #357be4;
+      }
+      /* 3つめ緑くする */
+      .l-section.is-bgColor--green {
+        background: #149072;
+      }
+
+      /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+      /* 左から右にスライドさせるぜってクラス */
+      .is-slided {
+        animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(180px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+        }
+        40%,
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+      /* フェードインさせるぜってクラス */
+
+      .is-feeded {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+      @keyframes feedIn {
+        0% {
+          opacity: 0; /*初期状態では透明に*/
+          transform: translateX(64px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="l-wrapper">
+      <p class="c-text">スクロールしてください。</p>
+      <div class="is-animated">あ</div>
+
+      <div class="l-section is-bgColor--red js-scrollAnimation">s</div>
+
+      <div class="l-section is-bgColor--blue js-scrollAnimation">dddd</div>
+
+      <div class="l-section is-bgColor--green js-scrollAnimation">ffff</div>
+    </div>
+
+    <div class="anime_test"></div>
+    <script>
+      let targets = document.querySelectorAll(".js-scrollAnimation"); //アニメーションさせたい要素
+      let offset = 100; //アニメーションタイミング
+
+      window.addEventListener("scroll", function () {
+        //スクロールしたとき
+
+        //スクロール量を取得
+        var scroll = window.scrollY;
+        //画面の高さを取得
+        var h = window.innerHeight;
+
+        for (let target of targets) {
+          var pos = target.getBoundingClientRect().top + scroll; //アニメーションさせたい要素の位置を取得
+          //スクロール量 > アニメーションさせたい要素の位置
+          if (scroll > pos - h + offset) {
+            // クラスを付与し、アニメーションを実行
+            // target.classList.add("is-slided");
+            target.classList.add("is-feeded");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
