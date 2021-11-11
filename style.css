@@ -113,7 +113,7 @@ header {
   /* このままでは、スクロールした際にsectionが重なってしまうので、z座標を指定※数値が大きいほど上になる */
   z-index: 10;
   background-color: #fff;
-  /* box-shadow:X軸 Y軸 ぼかし 影のサイズ 色; */
+  /*         X軸 Y軸 ぼかし 影のサイズ 色; */
   box-shadow: 0 6px 3px -3px rgba(0, 0, 0, 0.1);
   height: 80px;
   display: flex;
@@ -126,8 +126,6 @@ header {
 #kv {
   width: 100%;
   height: 712px;
-
-  /* height: 600px; */
   /* 固定 */
   position: fixed;
   /* ヘッダーの分スペースをあける */
@@ -139,23 +137,16 @@ header {
 
 /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
 /* feature */
-.feature-blk {
+.feature-wrap {
   margin-top: 792px;
   padding: 120px 0;
   width: 100%;
-  /* background-color: red; */
-}
-
-.feature-wrap {
   background-color: #fff;
   display: grid;
   grid-template:
-    /* ".. .." 30px */
-    "c1 c1" 1fr
+  /* ".. .." 30px */
     "l1 r1" 1fr
-    "c2 c2" 1fr
     "l2 r2" 1fr
-    "c3 c3" 1fr
     "l3 r3" 1fr
     /* ".. .." 30px */
     / 1fr 1fr;
@@ -165,33 +156,38 @@ header {
   /* transform: translate3d(0, 100px, 0); */
   /* transition: opacity 1.5s, transform 1.5s; */
 }
+.feature-txt {
+  /* 左右中央揃え */
+  justify-content: center;
 
-.feature-wrap * {
-  /* margin: 0 auto; */
+  /* 以下3つで上下中央揃え※heightは必須 */
+  height: 500px;
+  display: flex;
+  align-items: center;
+
+  /* 文字間隔 */
+  letter-spacing: 0.1em;
 }
 
-/* 自己紹介 */
-
+.feature-title {
+  margin-bottom: 30px;
+}
 /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
 
-.c1 {
-  grid-area: "c1";
-}
-.l1 {
+/* 自己紹介 */
+.about-img {
   grid-area: "l1";
   /* 背景画像の指定                     繰り返しなし 中央 上端合わせ 配置方法 */
   background: url(./images/selfy.JPG) no-repeat top center / cover;
   height: 500px;
 }
-.r1 {
+.about-txt {
   grid-area: "r1";
   opacity: 0;
+  font-size: 4rem;
 }
 
 /* ギター */
-.c2 {
-  grid-area: "c2";
-}
 .l2 {
   grid-area: "l2";
 }
@@ -202,9 +198,7 @@ header {
     top / cover;
 }
 
-.c3 {
-  grid-area: "c3";
-}
+/* エンジニア */
 .l3 {
   grid-area: "l3";
   /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
@@ -220,6 +214,12 @@ header {
 .is-animated {
   opacity: 1;
   animation: slideIna 3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* 動画 */
+video {
+  width: 100%;
 }
 
 @keyframes slideIna {
