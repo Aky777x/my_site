@@ -616,3 +616,17 @@ video {
 .scrollbox6 {
   background-color: #666;
 }
+/*  */
+
+.transition {
+  width: 25%;
+  height: 100px;
+  background-color: #ccc;
+  transition: all 0.4s;
+  -webkit-transition: -webkit-transform all 0.4s;
+}
+
+.transition:hover {
+  width: 100%;
+  background-color: #555;
+}
