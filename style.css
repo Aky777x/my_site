@@ -148,6 +148,7 @@ header {
     "l1 r1" 1fr
     "l2 r2" 1fr
     "l3 r3" 1fr
+    "l4 r4" 1fr
     /* ".. .." 30px */
     / 1fr 1fr;
   gap: 30px;
@@ -179,6 +180,8 @@ header {
   grid-area: "l1";
   /* 背景画像の指定                     繰り返しなし 中央 上端合わせ 配置方法 */
   background: url(./images/selfy.JPG) no-repeat top center / cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
   height: 500px;
 }
 .about-txt {
@@ -190,12 +193,16 @@ header {
 /* ギター */
 .l2 {
   grid-area: "l2";
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
 }
 .r2 {
   grid-area: "r2";
   /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
   background: url(./images/electric-guitar-gb3c81d7fc_1920.jpg) no-repeat center
     top / cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
 }
 
 /* エンジニア */
@@ -204,9 +211,58 @@ header {
   /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
   background: url(./images/code-g2082b141e_1920.jpg) no-repeat center top /
     cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
 }
 .r3 {
   grid-area: "r3";
+}
+
+/* 制作サイト */
+.r4 {
+  grid-area: "r4";
+  /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
+  background: url(./images/student-g846db50f6_1920.jpg) no-repeat center top /
+    cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
+}
+.l4 {
+  grid-area: "l4";
+}
+
+.img-txt {
+  /* 上下中央揃えにするため */
+  display: flex;
+  /* frexにするとh2とpが横並びになってしまうため、縦並びに戻す */
+  flex-direction: column;
+  box-sizing: border-box;
+
+  /* マットを敷く */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+
+  /* 文字色 */
+  color: #fff;
+
+  /* 上下中央 */
+  justify-content: center;
+  /* 左右中央揃え */
+  text-align: center;
+  /* デフォルトでは無色(非表示に) */
+  opacity: 0;
+}
+
+.img-txt:hover {
+  /* 透明度を1に */
+  opacity: 1;
+  font-size: 1.2em;
+  /* 全要素を0.8秒かけて表示する */
+  transition: all 0.8s;
 }
 
 /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
@@ -241,6 +297,7 @@ video {
   display: block;
   opacity: 1;
   animation: right-to-left 3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  -webkit-transition: -webkit-transform all 3s;
 }
 
 @keyframes right-to-left {
@@ -261,6 +318,7 @@ video {
   display: block;
   opacity: 1;
   animation: left-to-right 3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  -webkit-transition: -webkit-transform all 3s;
 }
 
 @keyframes left-to-right {
@@ -502,4 +560,59 @@ section {
 section h1 {
   font-size: 3.8rem;
   margin: 0 0 65px; /*上 左右 下*/
+}
+
+/* ---------------------------------
+動く背景
+------------------------------------ */
+
+/*固定する背景*/
+#scroll-test div {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 5%;
+}
+.parallax-bg,
+video {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50%;
+}
+/*各背景の画像*/
+.img-bg-01 {
+  background-image: url("https://dl.dropbox.com/s/lb7lg14z7kszlkj/2016-10-26%2021%2039%2022.jpg?dl=0");
+}
+.img-bg-02 {
+  background-image: url("https://dl.dropbox.com/s/73ogd4sfwh75h2c/IMG_1417.jpg?dl=0");
+}
+.img-bg-03 {
+  background-image: url("https://dl.dropbox.com/s/5s6hc5zi2cilz58/s_IMG_0222.jpg?dl=0");
+}
+.img-bg-04 {
+  background-image: url("https://dl.dropbox.com/s/g502g62sp7b2ty4/IMG_3551.jpg?dl=0");
+}
+.img-bg-05 {
+  background-image: url("https://dl.dropbox.com/s/1710ifzvqqqagme/IMG_0002_2.jpg?dl=0");
+}
+
+/*スクロールするコンテンツ*/
+.scrollbox1 {
+  background-color: #111;
+}
+.scrollbox2 {
+  background-color: #222;
+}
+.scrollbox3 {
+  background-color: #333;
+}
+.scrollbox4 {
+  background-color: #444;
+}
+.scrollbox5 {
+  background-color: #555;
+}
+.scrollbox6 {
+  background-color: #666;
 }
