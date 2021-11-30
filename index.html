@@ -15,11 +15,20 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
     <link rel="stylesheet" href="icomoon/style.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://kit.fontawesome.com/9a3564b421.js"></script>
     <style></style>
+
+    <link rel="stylesheet" type="text/css" media="all" href="./common.css" />
+    <script>
+      $(function () {
+        var style =
+          '<link rel="stylesheet" type="text/css" media="all" href="./anime.css" />';
+        $("head link:last").after(style);
+      });
+    </script>
   </head>
 
   <body class="">
