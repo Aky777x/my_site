@@ -19,76 +19,7 @@
     <link rel="stylesheet" href="icomoon/style.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://kit.fontawesome.com/9a3564b421.js"></script>
-    <style>
-      /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
-      /* アニメーション */
-      .is-animated {
-        opacity: 1;
-        animation: slideIna 3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-        perspective: 1000;
-      }
-
-      @keyframes slideIna {
-        0% {
-          transform: translateX(180px);
-          opacity: 0;
-          -webkit-transition: -webkit-transform all 3s;
-        }
-        100% {
-          transform: translateX(0);
-        }
-        40%,
-        100% {
-          opacity: 1;
-          -webkit-transition: -webkit-transform all 3s;
-        }
-      }
-
-      /* 右から左にスライドさせるぜってクラス */
-      .right-to-left {
-        display: block;
-        opacity: 1;
-        animation: right-to-left 3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-        perspective: 1000;
-      }
-
-      @keyframes right-to-left {
-        0% {
-          transform: translateX(180px);
-          opacity: 0;
-          -webkit-transition: -webkit-transform all 3s;
-        }
-        100% {
-          transform: translateX(0);
-          -webkit-transition: -webkit-transform all 3s;
-        }
-        40%,
-        100% {
-          opacity: 1;
-        }
-      }
-      /* 左から右にスライドさせるぜってクラス */
-      .left-to-right {
-        display: block;
-        opacity: 1;
-        animation: left-to-right 3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-        perspective: 1000;
-      }
-
-      @keyframes left-to-right {
-        0% {
-          transform: translateX(-180px);
-          opacity: 0;
-        }
-        100% {
-          transform: translateX(0);
-        }
-        40%,
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
+    <style></style>
 
     <link rel="stylesheet" type="text/css" media="all" href="./common.css" />
   </head>
@@ -329,39 +260,6 @@
         var style =
           '<link rel="stylesheet" type="text/css" media="all" href="./anime.css" />';
         $("head link:last").after(style);
-      });
-    </script>
-    <script>
-      let rightTargets = document.querySelectorAll(".right"); //アニメーションさせたい要素
-      let leftTargets = document.querySelectorAll(".left"); //アニメーションさせたい要素
-      let offset = 10; //アニメーションタイミング
-
-      window.addEventListener("scroll", function () {
-        //スクロールしたとき
-
-        //スクロール量を取得
-        var scroll = window.scrollY;
-        //画面の高さを取得
-        var h = window.innerHeight;
-
-        for (let target of rightTargets) {
-          var pos = target.getBoundingClientRect().top + scroll; //アニメーションさせたい要素の位置を取得
-          //スクロール量 > アニメーションさせたい要素の位置
-          if (scroll > pos - h + offset) {
-            // クラスを付与し、アニメーションを実行
-            target.classList.add("right-to-left");
-            //   target.classList.add("is-animated");
-          }
-        }
-        for (let target of leftTargets) {
-          var pos = target.getBoundingClientRect().top + scroll; //アニメーションさせたい要素の位置を取得
-          //スクロール量 > アニメーションさせたい要素の位置
-          if (scroll > pos - h + offset) {
-            // クラスを付与し、アニメーションを実行
-            target.classList.add("left-to-right");
-            //   target.classList.add("is-animated");
-          }
-        }
       });
     </script>
     <script src="script.js"></script>

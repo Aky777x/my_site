@@ -13,7 +13,7 @@
     -webkit-transition: -webkit-transform all 3s;
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0px);
   }
   40%,
   100% {
@@ -34,11 +34,9 @@
   0% {
     transform: translateX(180px);
     opacity: 0;
-    -webkit-transition: -webkit-transform all 3s;
   }
   100% {
-    transform: translateX(0);
-    -webkit-transition: -webkit-transform all 3s;
+    transform: translateX(0px);
   }
   40%,
   100% {
