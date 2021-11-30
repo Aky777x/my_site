@@ -158,7 +158,7 @@ header {
   /* transition: opacity 1.5s, transform 1.5s; */
 }
 .feature-txt {
-  color: red;
+  color: blue;
   /* 左右中央揃え */
   justify-content: center;
 
