@@ -43,21 +43,7 @@ textarea,
 select {
   font: inherit;
 }
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 
-@charset "UTF-8";
 html {
   margin: 0;
   padding: 0;
@@ -158,7 +144,8 @@ header {
   /* transition: opacity 1.5s, transform 1.5s; */
 }
 .feature-txt {
-  color: blue;
+  color: gray;
+
   /* 左右中央揃え */
   justify-content: center;
 
@@ -552,18 +539,4 @@ video {
 }
 .scrollbox6 {
   background-color: #666;
-}
-/*  */
-
-.transition {
-  width: 25%;
-  height: 100px;
-  background-color: #ccc;
-  transition: all 0.4s;
-  -webkit-transition: -webkit-transform all 0.4s;
-}
-
-.transition:hover {
-  width: 100%;
-  background-color: #555;
 }
