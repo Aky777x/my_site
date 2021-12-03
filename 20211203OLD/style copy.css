@@ -1,0 +1,550 @@
+/* A Modern CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.6rem;
+  line-height: 2.1;
+  color: #797e81;
+  margin: 0;
+  padding: 0%;
+  /* 全体を中央寄せ */
+  text-align: center;
+  background-color: #797e81;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+section {
+  background-color: #fff;
+}
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* ヘッダ */
+header {
+  width: 100%;
+  /* top0の位置にヘッダーを固定 */
+  position: fixed;
+  top: 0;
+  /* このままでは、スクロールした際にsectionが重なってしまうので、z座標を指定※数値が大きいほど上になる */
+  z-index: 10;
+  background-color: #fff;
+  /*         X軸 Y軸 ぼかし 影のサイズ 色; */
+  box-shadow: 0 6px 3px -3px rgba(0, 0, 0, 0.1);
+  height: 80px;
+  display: flex;
+  /* 上下中央揃え */
+  align-items: center;
+  z-index: -1;
+}
+/* ---------------------------------
+  kv
+---------------------------------- */
+.kv {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("./images/beach.jpg") center / cover;
+  /* position: fixed; */
+  /* ヘッダー使いたくなったらEnableに */
+  z-index: 1;
+}
+
+.h1 {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  font-size: 8rem;
+  text-shadow: 10px 10px 0 #fff;
+}
+
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* feature */
+.feature-wrap {
+  margin-top: 792px;
+  padding: 120px 0;
+  width: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template:
+  /* ".. .." 30px */
+    "l1 r1" 1fr
+    "l2 r2" 1fr
+    "l3 r3" 1fr
+    "l4 r4" 1fr
+    /* ".. .." 30px */
+    / 1fr 1fr;
+  gap: 30px;
+
+  /* opacity: 0.7; */
+  /* transform: translate3d(0, 100px, 0); */
+  /* transition: opacity 1.5s, transform 1.5s; */
+}
+.feature-txt {
+  color: gray;
+
+  /* 左右中央揃え */
+  justify-content: center;
+
+  /* 以下3つで上下中央揃え※heightは必須 */
+  height: 500px;
+  display: flex;
+  align-items: center;
+
+  /* 文字間隔 */
+  letter-spacing: 0.1em;
+}
+
+.feature-title {
+  margin-bottom: 30px;
+}
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+
+/* 自己紹介 */
+.about-img {
+  grid-area: "l1";
+  /* 背景画像の指定                     繰り返しなし 中央 上端合わせ 配置方法 */
+  background: url(./images/selfy.JPG) no-repeat top center / cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
+  height: 500px;
+}
+.about-txt {
+  grid-area: "r1";
+  font-size: 4rem;
+}
+
+/* ギター */
+.l2 {
+  grid-area: "l2";
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
+}
+.r2 {
+  grid-area: "r2";
+  /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
+  background: url(./images/electric-guitar-gb3c81d7fc_1920.jpg) no-repeat center
+    top / cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
+}
+
+/* エンジニア */
+.l3 {
+  grid-area: "l3";
+  /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
+  background: url(./images/code-g2082b141e_1920.jpg) no-repeat center top /
+    cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
+}
+.r3 {
+  grid-area: "r3";
+}
+
+/* 制作サイト */
+.r4 {
+  grid-area: "r4";
+  /* 背景画像の指定                 繰り返しなし 中央 上端合わせ 配置方法 */
+  background: url(./images/student-g846db50f6_1920.jpg) no-repeat center top /
+    cover;
+  /* 子要素を絶対位置にするため、relativeにしておく */
+  position: relative;
+}
+.l4 {
+  grid-area: "l4";
+}
+
+.img-txt {
+  /* 上下中央揃えにするため */
+  display: flex;
+  /* frexにするとh2とpが横並びになってしまうため、縦並びに戻す */
+  flex-direction: column;
+  box-sizing: border-box;
+
+  /* マットを敷く */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+
+  /* 文字色 */
+  color: #fff;
+
+  /* 上下中央 */
+  justify-content: center;
+  /* 左右中央揃え */
+  text-align: center;
+  /* デフォルトでは無色(非表示に) */
+  opacity: 0;
+}
+
+.img-txt:hover {
+  /* 透明度を1に */
+  opacity: 1;
+  font-size: 2em;
+  /* 全要素を0.8秒かけて表示する */
+  transition: all 0.8s;
+}
+
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* 動画 */
+video {
+  width: 100%;
+}
+
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+
+/* フッター */
+footer {
+  padding: 120px 0 0 0;
+  position: relative;
+  background: #1d2326;
+}
+
+footer a {
+  color: #ea7558;
+}
+
+footer .logo {
+  color: #d4dde2;
+  font-size: 11rem;
+}
+footer .wrap-blk {
+  margin-bottom: 120px;
+  /* 子要素を横並びに */
+  display: flex;
+}
+
+footer .wrap-blk p {
+  font-size: 1.5rem;
+  line-height: 2.3;
+  color: #d4dde2;
+  width: 50%;
+  margin: 0 25px;
+  text-align: right;
+}
+
+footer ul {
+  font-size: 2.2rem;
+  line-height: 1.5;
+  color: #d4dde2;
+  letter-spacing: 0.05em;
+  width: 50%;
+  margin: 0 25px;
+  text-align: left;
+}
+
+footer i {
+  margin-right: 0.3rem;
+}
+
+.copyright {
+  font-size: 1.5rem;
+  color: #d4dde2;
+  letter-spacing: 0.05em;
+  padding: 60px 0;
+  background: #111619;
+}
+
+/* about いらっしゃいませ〜〜お箸の文化*/
+
+#about h1 {
+  color: #2e4551;
+}
+
+#about .contents-blk#ohashi h2::before {
+  display: block;
+  content: url(./images/ico03.png);
+}
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+
+/* menu  料理のメニュー*/
+#menu {
+  padding: 120px 0 20px;
+}
+
+#menu .inner {
+  width: 1054px;
+}
+
+#menu h1 {
+  color: #2e4551;
+  margin: 0 0 80px;
+}
+
+/* メニューのリスト */
+#menu ul {
+  margin: 0 0 110px;
+  /* 横並びに */
+  display: flex;
+  /* 中央揃え */
+  justify-content: center;
+}
+
+#menu li {
+  font-weight: 600;
+  /* フォントを作る場合、フォントのサイズを最大９段階で作れる
+  ９００：太い
+  ４００：標準★これがnormal
+  １００：細い
+  ※ただし、９段階のサイズを対応しているフォントはほぼない
+
+  normalやboldはいくつ？
+  指定したフォントの仕様(用意されているサイズ)で変わる
+  */
+  margin: 0 25px;
+  letter-spacing: 0.3em;
+}
+
+/* メニュー一覧のブロック */
+#menu .item-blk {
+  /* 横並びに */
+  display: flex;
+}
+
+#menu h2 {
+  font-size: 1.5rem;
+  color: #2e4551;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+}
+
+#menu .text {
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+}
+
+#menu .price {
+  font-size: 2.2rem;
+  color: #2e4551;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+#menu .lead {
+  margin: 0 0 65px;
+}
+
+#menu .item {
+  width: 233px;
+  padding: 136px 0 20px;
+  margin: 0 15px 100px;
+  border: 2px solid #752727;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* メニューの画像  pタグ */
+#menu .item .photo {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: -60px;
+  left: 38px;
+}
+
+/* メニューの画像 */
+#menu .item .photo img {
+  border-radius: 50%;
+}
+
+/* reservation 予約のとこ */
+#reservation {
+  color: #fff !important;
+  padding: 100px 0;
+  position: relative;
+  background: url(./images/photo_sec04.png) no-repeat center center / cover;
+}
+
+/* 予約のところにマットを敷く */
+#reservation::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* 内容は空だが、content自体は必須 */
+  content: "";
+}
+
+#reservation h1 {
+  letter-spacing: 0.1em;
+  /* 以下2つはマットの上に要素を持ってくるために設定 */
+  position: relative;
+  z-index: 1;
+}
+
+#reservation h1::before {
+  display: block;
+  content: url(./images/ico04.png);
+}
+
+#reservation .btn a {
+  line-height: 44px;
+  color: #fff;
+  width: 220px;
+  height: 44px;
+  /* inline → inline-blockにし、幅と高さをもたせる */
+  display: inline-block;
+  background: #ea7558;
+  border-radius: 3px;
+}
+
+#reservation p {
+  position: relative;
+  z-index: 1;
+}
+
+/* ナビバー */
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* 各要素 */
+section {
+  /* position: relative; */
+  /* 試験用 */
+  /* width: 100%; */
+}
+
+section h1 {
+  font-size: 3.8rem;
+  margin: 0 0 65px; /*上 左右 下*/
+}
+
+/* ---------------------------------
+動く背景
+------------------------------------ */
+
+/*固定する背景*/
+#scroll-test div {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 5%;
+}
+.parallax-bg,
+video {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50%;
+}
+/*各背景の画像*/
+.img-bg-01 {
+  background-image: url("https://dl.dropbox.com/s/lb7lg14z7kszlkj/2016-10-26%2021%2039%2022.jpg?dl=0");
+}
+.img-bg-02 {
+  background-image: url("https://dl.dropbox.com/s/73ogd4sfwh75h2c/IMG_1417.jpg?dl=0");
+}
+.img-bg-03 {
+  background-image: url("https://dl.dropbox.com/s/5s6hc5zi2cilz58/s_IMG_0222.jpg?dl=0");
+}
+.img-bg-04 {
+  background-image: url("https://dl.dropbox.com/s/g502g62sp7b2ty4/IMG_3551.jpg?dl=0");
+}
+.img-bg-05 {
+  background-image: url("https://dl.dropbox.com/s/1710ifzvqqqagme/IMG_0002_2.jpg?dl=0");
+}
+
+/*スクロールするコンテンツ*/
+.scrollbox1 {
+  background-color: #111;
+}
+.scrollbox2 {
+  background-color: #222;
+}
+.scrollbox3 {
+  background-color: #333;
+}
+.scrollbox4 {
+  background-color: #444;
+}
+.scrollbox5 {
+  background-color: #555;
+}
+.scrollbox6 {
+  background-color: #666;
+}
