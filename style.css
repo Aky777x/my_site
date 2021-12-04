@@ -159,6 +159,7 @@ nav a:hover {
 
 .h1 {
   color: whitesmoke;
+  color: red;
   line-height: 1;
   letter-spacing: 1.5rem;
   font-size: 8rem;
@@ -212,11 +213,11 @@ nav a:hover {
 }
 
 .bottom-item {
-  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .top-item {
-  margin-bottom: 10rem;
+  margin-top: 10rem;
 }
 
 /* 画像 */
