@@ -211,12 +211,12 @@ nav a:hover {
   /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
-.left-item {
-  margin-bottom: 10rem;
+.bottom-item {
+  margin-top: 10rem;
 }
 
-.right-item {
-  margin-top: 10rem;
+.top-item {
+  margin-bottom: 10rem;
 }
 
 /* 画像 */
