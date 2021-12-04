@@ -100,9 +100,37 @@ ul li {
   width: 100%;
   min-height: 100vh;
   background: url("./images/beach.jpg") center / cover;
-  /* ヘッダー使いたくなったらEnableに */
-  z-index: -100;
+  /* 画面全体の背景にするため、1つ下げる */
+  z-index: -1;
   position: fixed;
+}
+
+/* サイト名 */
+.site-name-wrap {
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* 以下3つで上下中央揃え※heightは必須 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-name {
+  padding: 3rem;
+  border: solid 0.5rem whitesmoke;
+  border-radius: 10px;
+}
+
+.h1 {
+  color: whitesmoke;
+  line-height: 1;
+  letter-spacing: 1.5rem;
+  font-size: 8rem;
+  font-weight: bold;
 }
 
 /* ナビリンク */
@@ -113,13 +141,12 @@ nav {
   left: 50%;
   display: flex;
   justify-content: space-evenly;
+  /* サイト名の要素でマットを敷いているので1つ上にする */
   z-index: 1;
-  /* position: fixed; */
 }
 
 /* ボタン */
 nav a {
-  z-index: -1;
   display: block;
   padding: 1px 3rem;
   font-weight: bold;
@@ -135,35 +162,23 @@ nav a:hover {
   color: whitesmoke;
 }
 
-/* サイト名 */
-.site-name-wrap {
-  height: 20vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  /* 以下3つで上下中央揃え※heightは必須 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -10;
+.TextTyping span {
+  display: none;
 }
 
-.site-name {
-  /* position: fixed; 固定したい時用*/
-  padding: 3rem;
-  border: solid 0.5rem whitesmoke;
-  border-radius: 10px;
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+  content: "|";
+  animation: typinganime 0.8s ease infinite;
 }
 
-.h1 {
-  color: whitesmoke;
-  color: red;
-  line-height: 1;
-  letter-spacing: 1.5rem;
-  font-size: 8rem;
-  font-weight: bold;
+@keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ---------------------------------
@@ -178,7 +193,7 @@ nav a:hover {
 .title {
   margin-bottom: 8rem;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* 見出し */
