@@ -227,14 +227,6 @@ nav a:hover {
   /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
-.bottom-item {
-  margin-bottom: 10rem;
-}
-
-.top-item {
-  margin-top: 10rem;
-}
-
 /* 画像 */
 .img {
   width: 50%;
