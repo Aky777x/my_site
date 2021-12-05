@@ -72,7 +72,7 @@
           <h2><span class="title-h2">a</span>bout</h2>
           <p>私のこと</p>
         </div>
-        <div class="my-inner container flex delayScroll">
+        <div class="my-inner container flex delayScroll PROFILE">
           <div class="img about-img box">
             <div class="img-txt">
               <p>about-img</p>
@@ -94,7 +94,7 @@
           <h2>s<span class="title-h2">k</span>ill</h2>
           <p>私にできること</p>
         </div>
-        <div class="my-inner container flex delayScroll">
+        <div class="my-inner container flex delayScroll SKILL">
           <div class="text">
             <p>HTML</p>
             <p>CSS</p>
@@ -118,7 +118,7 @@
           <h2>portfol<span class="title-h2">i</span>o</h2>
           <p>私のつくったもの※随時追加</p>
         </div>
-        <div class="my-inner container flex delayScroll">
+        <div class="my-inner container flex delayScroll PORTFOLIO">
           <div class="img">
             <div class="img-txt">
               <p>about-img</p>
@@ -224,10 +224,15 @@
           if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {
             //指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
             $(childs).each(function () {
+              JSON.stringify("親: " + parent);
+              JSON.stringify("子: " + childs);
               if (!$(this).hasClass("fadeUp")) {
                 //アニメーションのクラス名が指定されているかどうかをチェック
 
                 $(parent).addClass("play"); //親要素にクラス名playを追加
+                debugger;
+                console.log("対象: " + $(this));
+                console.log("対象: " + this);
                 $(this).css("animation-delay", value + "s"); //アニメーション遅延のCSS animation-delayを追加し
                 $(this).addClass("fadeUp"); //アニメーションのクラス名を追加
                 value = value + time; //delay時間を増加させる
