@@ -72,7 +72,7 @@
           <h2><span class="title-h2">a</span>bout</h2>
           <p>私のこと</p>
         </div>
-        <div class="my-inner container flex delayScroll PROFILE">
+        <div class="my-inner container flex delayScroll box PROFILE">
           <div class="img about-img box">
             <div class="img-txt">
               <p>about-img</p>
@@ -94,7 +94,7 @@
           <h2>s<span class="title-h2">k</span>ill</h2>
           <p>私にできること</p>
         </div>
-        <div class="my-inner container flex delayScroll SKILL">
+        <div class="my-inner container flex delayScroll box SKILL">
           <div class="text">
             <p>HTML</p>
             <p>CSS</p>
@@ -118,7 +118,7 @@
           <h2>portfol<span class="title-h2">i</span>o</h2>
           <p>私のつくったもの※随時追加</p>
         </div>
-        <div class="my-inner container flex delayScroll PORTFOLIO">
+        <div class="my-inner container flex delayScroll box PORTFOLIO">
           <div class="img">
             <div class="img-txt">
               <p>about-img</p>
@@ -230,7 +230,6 @@
                 //アニメーションのクラス名が指定されているかどうかをチェック
 
                 $(parent).addClass("play"); //親要素にクラス名playを追加
-                debugger;
                 console.log("対象: " + $(this));
                 console.log("対象: " + this);
                 $(this).css("animation-delay", value + "s"); //アニメーション遅延のCSS animation-delayを追加し
