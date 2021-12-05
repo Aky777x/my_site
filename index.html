@@ -152,83 +152,83 @@
       </p>
     </footer>
     <script>
-        // 文字入力風
-        $(function () {
-          var style =
-            '<link rel="stylesheet" type="text/css" media="all" href="./anime.css" />';
-          $("head link:last").after(style);
-        });
+      // 文字入力風
+      $(function () {
+        var style =
+          '<link rel="stylesheet" type="text/css" media="all" href="./anime.css" />';
+        $("head link:last").after(style);
+      });
 
-        // TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義
-        function TextTypingAnime() {
-          $(".TextTyping").each(function () {
-            var elemPos = $(this).offset().top - 50;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            var thisChild = "";
-            if (scroll >= elemPos - windowHeight) {
-              thisChild = $(this).children(); //spanタグを取得
-              //spanタグの要素の１つ１つ処理を追加
-              thisChild.each(function (i) {
-                var time = 100;
-                //時差で表示する為にdelayを指定しその時間後にfadeInで表示させる
-                $(this)
-                  .delay(time * i)
-                  .fadeIn(time);
-              });
+      // TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義
+      function TextTypingAnime() {
+        $(".TextTyping").each(function () {
+          var elemPos = $(this).offset().top - 50;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+          var thisChild = "";
+          if (scroll >= elemPos - windowHeight) {
+            thisChild = $(this).children(); //spanタグを取得
+            //spanタグの要素の１つ１つ処理を追加
+            thisChild.each(function (i) {
+              var time = 100;
+              //時差で表示する為にdelayを指定しその時間後にfadeInで表示させる
+              $(this)
+                .delay(time * i)
+                .fadeIn(time);
+            });
+          } else {
+            thisChild = $(this).children();
+            thisChild.each(function () {
+              $(this).stop(); //delay処理を止める
+              $(this).css("display", "none"); //spanタグ非表示
+            });
+          }
+        });
+      }
+      // 画面をスクロールをしたら動かしたい場合の記述
+      $(window).scroll(function () {
+        TextTypingAnime(); /* アニメーション用の関数を呼ぶ*/
+      }); // ここまで画面をスクロールをしたら動かしたい場合の記述
+
+      // 画面が読み込まれたらすぐに動かしたい場合の記述
+      $(window).on("load", function () {
+        //spanタグを追加する
+        var element = $(".TextTyping");
+        element.each(function () {
+          var text = $(this).html();
+          var textbox = "";
+          text.split("").forEach(function (t) {
+            if (t !== " ") {
+              textbox += "<span>" + t + "</span>";
             } else {
-              thisChild = $(this).children();
-              thisChild.each(function () {
-                $(this).stop(); //delay処理を止める
-                $(this).css("display", "none"); //spanタグ非表示
-              });
+              textbox += t;
             }
           });
-        }
-        // 画面をスクロールをしたら動かしたい場合の記述
-        $(window).scroll(function () {
-          TextTypingAnime(); /* アニメーション用の関数を呼ぶ*/
-        }); // ここまで画面をスクロールをしたら動かしたい場合の記述
+          $(this).html(textbox);
+        });
 
-        // 画面が読み込まれたらすぐに動かしたい場合の記述
-        $(window).on("load", function () {
-          //spanタグを追加する
-          var element = $(".TextTyping");
-          element.each(function () {
-            var text = $(this).html();
-            var textbox = "";
-            text.split("").forEach(function (t) {
-              if (t !== " ") {
-                textbox += "<span>" + t + "</span>";
-              } else {
-                textbox += t;
-              }
-            });
-            $(this).html(textbox);
-          });
+        TextTypingAnime(); /* アニメーション用の関数を呼ぶ*/
+      }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
-          TextTypingAnime(); /* アニメーション用の関数を呼ぶ*/
-        }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
-
-        // 順番にふわっと
-        function delayScrollAnime() {
-
-             var ua = navigator.userAgent;
-      if ((ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0) {
-          // スマートフォン用処理
-      } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
-          // タブレット用処理
+      var ua = navigator.userAgent;
+      if (
+        (ua.indexOf("iPhone") > 0 || ua.indexOf("Android") > 0) &&
+        ua.indexOf("Mobile") > 0
+      ) {
+        // スマートフォン用処理
+      } else if (ua.indexOf("iPad") > 0 || ua.indexOf("Android") > 0) {
+        // タブレット用処理
       } else {
-          // PC用処理
+        // PC用処理
       }
-      function animationFunc(){
-
+      // 順番にふわっと
+      function delayScrollAnime() {
         var time = 0.2; //遅延時間を増やす秒数の値
         var value = time;
         $(".delayScroll").each(function () {
           var parent = this; //親要素を取得
           var elemPos = $(this).offset().top; //要素の位置まで来たら
-          var scroll = $(window).scrollTop(); //スクロール値を取得
+          var scroll = $(window).scrollTop() + 30; //スクロール値を取得
           var windowHeight = $(window).height(); //画面の高さを取得
           var childs = $(this).children(); //子要素を取得
 
@@ -258,54 +258,18 @@
             $(childs).removeClass("fadeUp"); //アニメーションのクラス名を削除
             value = time; //delay初期値の数値に戻す
           }
-        }
-          // var time = 0.2; //遅延時間を増やす秒数の値
-          // var value = time;
-          // $(".delayScroll").each(function () {
-          //   var parent = this; //親要素を取得
-          //   var elemPos = $(this).offset().top; //要素の位置まで来たら
-          //   var scroll = $(window).scrollTop(); //スクロール値を取得
-          //   var windowHeight = $(window).height(); //画面の高さを取得
-          //   var childs = $(this).children(); //子要素を取得
+        });
+      }
 
-          //   if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {
-          //     //指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
-          //     $(childs).each(function () {
-          //       JSON.stringify("親: " + parent);
-          //       JSON.stringify("子: " + childs);
-          //       if (!$(this).hasClass("fadeUp")) {
-          //         //アニメーションのクラス名が指定されているかどうかをチェック
+      // 画面をスクロールをしたら動かしたい場合の記述
+      $(window).scroll(function () {
+        delayScrollAnime(); /* アニメーション用の関数を呼ぶ*/
+      }); // ここまで画面をスクロールをしたら動かしたい場合の記述
 
-          //         $(parent).addClass("play"); //親要素にクラス名playを追加
-          //         console.log("対象: " + $(this));
-          //         console.log("対象: " + this);
-          //         $(this).css("animation-delay", value + "s"); //アニメーション遅延のCSS animation-delayを追加し
-          //         $(this).addClass("fadeUp"); //アニメーションのクラス名を追加
-          //         value = value + time; //delay時間を増加させる
-
-          //         //全ての処理を終わったらplayを外す
-          //         var index = $(childs).index(this);
-          //         if (childs.length - 1 == index) {
-          //           $(parent).removeClass("play");
-          //         }
-          //       }
-          //     });
-          //   } else {
-          //     $(childs).removeClass("fadeUp"); //アニメーションのクラス名を削除
-          //     value = time; //delay初期値の数値に戻す
-          //   }
-          });
-        }
-
-        // 画面をスクロールをしたら動かしたい場合の記述
-        $(window).scroll(function () {
-          delayScrollAnime(); /* アニメーション用の関数を呼ぶ*/
-        }); // ここまで画面をスクロールをしたら動かしたい場合の記述
-
-        // 画面が読み込まれたらすぐに動かしたい場合の記述
-        $(window).on("load", function () {
-          delayScrollAnime(); /* アニメーション用の関数を呼ぶ*/
-        }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+      // 画面が読み込まれたらすぐに動かしたい場合の記述
+      $(window).on("load", function () {
+        delayScrollAnime(); /* アニメーション用の関数を呼ぶ*/
+      }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
     </script>
   </body>
 </html>
