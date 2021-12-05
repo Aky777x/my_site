@@ -85,13 +85,13 @@ ul li {
   list-style: none;
 }
 
-/* html {
+html {
   height: -webkit-fill-available;
 }
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-} */
+}
 
 /* ---------------------------------
   kv
@@ -130,7 +130,7 @@ body {
 .site-name {
   padding: 3rem;
   border: solid 0.5rem red;
-  /* border: solid 0.5rem whitesmoke; */
+  border: solid 0.5rem whitesmoke;
   border-radius: 10px;
 }
 
