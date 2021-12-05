@@ -121,7 +121,8 @@ ul li {
 
 .site-name {
   padding: 3rem;
-  border: solid 0.5rem whitesmoke;
+  border: solid 0.5rem red;
+  /* border: solid 0.5rem whitesmoke; */
   border-radius: 10px;
 }
 
