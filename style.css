@@ -85,6 +85,14 @@ ul li {
   list-style: none;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 /* ---------------------------------
   kv
 ---------------------------------- */
@@ -537,5 +545,15 @@ body {
   #kv-wrap,
   .site-name-wrap {
     height: 80vh;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 }
