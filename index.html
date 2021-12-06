@@ -58,6 +58,7 @@
     <div class="width">
       <p>幅:{{width}}px</p>
       <p>{{device}}</p>
+      <p>{{deviceInfo}}</p>
     </div>
     <section id="kv-wrap">
       <div class="kv"></div>
@@ -219,6 +220,7 @@
       }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
       var ua = navigator.userAgent;
+      alert(ua);
       if (
         (ua.indexOf("iPhone") > 0 || ua.indexOf("Android") > 0) &&
         ua.indexOf("Mobile") > 0

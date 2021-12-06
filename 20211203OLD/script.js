@@ -35,6 +35,7 @@ const width = new Vue({
   data: {
     width: "",
     device: "",
+    deviceInfo: "",
   },
   mounted: function () {
     let checkWidth = setInterval(this.checkWidth, 500);
@@ -43,6 +44,7 @@ const width = new Vue({
     checkWidth: function () {
       this.width = window.innerWidth;
       this.device = this.checkDevice(window.innerWidth);
+      this.deviceInfo = this.checkDeviceInfo();
     },
     checkDevice: function (w) {
       if (w > 1440) {
@@ -59,6 +61,21 @@ const width = new Vue({
         return "スプリットビュー等相当";
       } else {
         return "※非対応のためスクロール必須";
+      }
+    },
+    checkDeviceInfo: function () {
+      var ua = navigator.userAgent;
+
+      return ua;
+      if (
+        (ua.indexOf("iPhone") > 0 || ua.indexOf("Android") > 0) &&
+        ua.indexOf("Mobile") > 0
+      ) {
+        // スマートフォン用処理
+      } else if (ua.indexOf("iPad") > 0 || ua.indexOf("Android") > 0) {
+        // タブレット用処理
+      } else {
+        // PC用処理
       }
     },
   },
