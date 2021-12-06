@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://kit.fontawesome.com/9a3564b421.js"></script>
     <style></style>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="./common.css" />
   </head>
 
@@ -51,6 +51,10 @@
       </div>
     </div> -->
     <!--  -->
+    <div class="width">
+      <p>幅:{{width}}px</p>
+      <p>{{device}}</p>
+    </div>
     <section id="kv-wrap">
       <div class="kv"></div>
       <nav>
@@ -270,6 +274,9 @@
       $(window).on("load", function () {
         delayScrollAnime(); /* アニメーション用の関数を呼ぶ*/
       }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+      //
     </script>
+    <script src="./script.js"></script>
   </body>
 </html>

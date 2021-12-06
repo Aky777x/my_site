@@ -540,11 +540,14 @@ body {
   スマホ
 ---------------------------------- */
 
-@media screen and (max-width: 428px) {
+@media (max-width: 428px) {
   /* スマホのURL表示バーを考慮 */
   #kv-wrap,
   .site-name-wrap {
     height: 80vh;
+  }
+
+  .h1 {
     color: red;
   }
 }
@@ -557,4 +560,14 @@ body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
   }
+}
+
+/* ---------------------------------
+画面幅の表示※開発用
+---------------------------------- */
+.width {
+  font-size: 3rem;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
 }
