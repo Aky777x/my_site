@@ -552,13 +552,13 @@ body {
 /* @media (max-width: 428px) { */
 @media screen and (max-width: 980px) {
   /* スマホのURL表示バーを考慮 */
-  #kv-wrap,
+  /* #kv-wrap,
   .site-name-wrap {
     height: 80vh;
-  }
+  } */
 
   .h1 {
-    color: red;
+    color: blue;
   }
 }
 
