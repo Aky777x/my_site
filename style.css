@@ -537,32 +537,6 @@ body {
 }
 
 /* ---------------------------------
-  スマホ
----------------------------------- */
-@supports (-webkit-touch-callout: none) {
-  html {
-    height: -webkit-fill-available;
-  }
-  body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-}
-
-/* @media (max-width: 428px) { */
-@media screen and (max-width: 980px) {
-  /* スマホのURL表示バーを考慮 */
-  /* #kv-wrap,
-  .site-name-wrap {
-    height: 80vh;
-  } */
-
-  .h1 {
-    color: blue;
-  }
-}
-
-/* ---------------------------------
 画面幅の表示※開発用
 ---------------------------------- */
 .width {
