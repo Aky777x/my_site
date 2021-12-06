@@ -5,8 +5,8 @@
   const iosFlg = ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") > 0;
 
   if (iosFlg) {
-    document.getElementById("kv-wrap").style.height = "80vh";
-    document.getElementsByClassName("site-name-wrap")[0].style.height = "80vh";
+    document.getElementById("kv-wrap").style.height = "75vh";
+    document.getElementsByClassName("site-name-wrap")[0].style.height = "75vh";
   }
 
   function delayScrollAnime() {
