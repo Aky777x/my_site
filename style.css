@@ -539,8 +539,18 @@ body {
 /* ---------------------------------
   スマホ
 ---------------------------------- */
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+}
 
-@media (max-width: 428px) {
+/* @media (max-width: 428px) { */
+@media screen and (max-width: 500px) {
   /* スマホのURL表示バーを考慮 */
   #kv-wrap,
   .site-name-wrap {
@@ -549,16 +559,6 @@ body {
 
   .h1 {
     color: red;
-  }
-}
-
-@supports (-webkit-touch-callout: none) {
-  html {
-    height: -webkit-fill-available;
-  }
-  body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
   }
 }
 
