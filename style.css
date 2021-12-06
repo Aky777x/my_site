@@ -540,11 +540,12 @@ body {
   スマホ
 ---------------------------------- */
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 428px) {
   /* スマホのURL表示バーを考慮 */
   #kv-wrap,
   .site-name-wrap {
     height: 80vh;
+    color: red;
   }
 }
 
