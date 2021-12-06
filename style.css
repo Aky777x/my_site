@@ -550,7 +550,7 @@ body {
 }
 
 /* @media (max-width: 428px) { */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 980px) {
   /* スマホのURL表示バーを考慮 */
   #kv-wrap,
   .site-name-wrap {
