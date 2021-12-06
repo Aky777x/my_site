@@ -1,3 +1,18 @@
+(() => {
+  const ua = navigator.userAgent;
+  console.log("端末情報: " + ua);
+  debugger;
+  if (ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") > 0) {
+    // iOS用処理 ※iOSはバグや特殊な仕様があるので、処理を分ける
+
+    documents.getElementsByClassName("site-name-wrap").style.height = "20px";
+    debugger;
+  } else {
+    // PC用処理
+    documents.getElementsByClassName("site-name-wrap").style.height = "20px";
+  }
+})();
+
 let rightTargets = document.querySelectorAll(".right"); //アニメーションさせたい要素
 let leftTargets = document.querySelectorAll(".left"); //アニメーションさせたい要素
 let offset = 10; //アニメーションタイミング
@@ -35,7 +50,6 @@ const width = new Vue({
   data: {
     width: "",
     device: "",
-    deviceInfo: "",
   },
   mounted: function () {
     let checkWidth = setInterval(this.checkWidth, 500);
@@ -44,7 +58,6 @@ const width = new Vue({
     checkWidth: function () {
       this.width = window.innerWidth;
       this.device = this.checkDevice(window.innerWidth);
-      this.deviceInfo = this.checkDeviceInfo();
     },
     checkDevice: function (w) {
       if (w > 1440) {
@@ -61,21 +74,6 @@ const width = new Vue({
         return "スプリットビュー等相当";
       } else {
         return "※非対応のためスクロール必須";
-      }
-    },
-    checkDeviceInfo: function () {
-      var ua = navigator.userAgent;
-
-      return ua;
-      if (
-        (ua.indexOf("iPhone") > 0 || ua.indexOf("Android") > 0) &&
-        ua.indexOf("Mobile") > 0
-      ) {
-        // スマートフォン用処理
-      } else if (ua.indexOf("iPad") > 0 || ua.indexOf("Android") > 0) {
-        // タブレット用処理
-      } else {
-        // PC用処理
       }
     },
   },

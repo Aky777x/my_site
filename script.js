@@ -1,4 +1,16 @@
 (function () {
+  const ua = navigator.userAgent;
+  console.log("端末情報: " + ua);
+  debugger;
+  if (ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") > 0) {
+    // iOS用処理 ※iOSはバグや特殊な仕様があるので、処理を分ける
+
+    document.getElementById("kv-wrap").style.height = "80vh";
+    document.getElementsByClassName("site-name-wrap")[0].style.height = "80vh";
+  } else {
+    // PC用処理
+  }
+
   const width = new Vue({
     el: ".width",
     data: {

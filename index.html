@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta
+    <!-- <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+    /> -->
     <title>Aky official</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,7 +58,6 @@
     <div class="width">
       <p>幅:{{width}}px</p>
       <p>{{device}}</p>
-      <p>{{deviceInfo}}</p>
     </div>
     <section id="kv-wrap">
       <div class="kv"></div>
@@ -219,18 +218,6 @@
         TextTypingAnime(); /* アニメーション用の関数を呼ぶ*/
       }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
-      var ua = navigator.userAgent;
-      alert(ua);
-      if (
-        (ua.indexOf("iPhone") > 0 || ua.indexOf("Android") > 0) &&
-        ua.indexOf("Mobile") > 0
-      ) {
-        // スマートフォン用処理
-      } else if (ua.indexOf("iPad") > 0 || ua.indexOf("Android") > 0) {
-        // タブレット用処理
-      } else {
-        // PC用処理
-      }
       // 順番にふわっと
       function delayScrollAnime() {
         var time = 0.2; //遅延時間を増やす秒数の値
