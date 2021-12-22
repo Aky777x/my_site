@@ -1,0 +1,193 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+section {
+  margin: 0;
+}
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+ul {
+  margin: 0 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ヘッダ */
+header {
+  height: 360px;
+  padding: 15px 0;
+  background-color: #fff;
+}
+
+body {
+  min-width: 600px;
+  background-color: #0068b7;
+}
+
+.container {
+  max-width: 1080px;
+}
+
+#message-blk {
+  height: 100px;
+  background-color: #239dda;
+  margin: 10px 0;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+main {
+  height: 1280px;
+  background-color: navy;
+}
+
+/* ---------------------------------
+フッター:160px
+---------------------------------- */
+footer {
+  height: 160px;
+  background-color: red;
+}
+
+footer * {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+footer img {
+  background-color: yellow;
+  border-radius: 100%;
+}
+
+/* 目標をクリア */
+footer .left {
+  grid-area: left;
+  color: white;
+}
+
+/* 目標まであと一歩 */
+footer .center {
+  grid-area: center;
+  color: #ffdc00;
+}
+
+/* 基準値をオーバー */
+footer .right {
+  grid-area: right;
+  color: #ee7700;
+}
+
+/* ---------------------------------
+レスポンシブ
+------------------------------------ */
+/* iPad未満 */
+@media (max-width: 743px) {
+  html {
+    font-size: 11px;
+  }
+  .env-title {
+    /* font-size: 1.4rem; */
+    font-size: 1.8rem;
+  }
+  .decarbonization-info {
+    font-size: 1.6rem;
+  }
+}
+
+/* ipad相当 ※mini6世代のみ744px、他世代は768px */
+@media (min-width: 744px) {
+  html {
+    font-size: 13px;
+  }
+  .env-title {
+    font-size: 2rem;
+  }
+  .decarbonization-info {
+    font-size: 1.6rem;
+  }
+}
+
+/* タブレット相当 */
+@media (min-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+  .env-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* サイネージ相当 */
+@media (min-width: 1080px) {
+  html {
+    font-size: 17px;
+  }
+  .env-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* PC相当 */
+@media (min-width: 1200px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+/* ---------------------------------
+画面幅の表示※開発用
+---------------------------------- */
+.width {
+  font-size: 3rem;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
