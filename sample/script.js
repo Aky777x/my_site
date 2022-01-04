@@ -5,9 +5,9 @@
   const iosFlg = ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") > 0;
 
   if (iosFlg) {
-    alert("ipadだよ");
+    alert("ipadだ!!!");
     let elm = document.getElementsByTagName("html")[0];
-    elm.style.transformOrigin = "top left";
+    // elm.style.transformOrigin = "top left";
     elm.style.transform = "scale(0.5)";
   } else {
     console.log("not iPad");
