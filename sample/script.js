@@ -5,8 +5,7 @@
   const iosFlg = ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") > 0;
 
   if (iosFlg) {
-    document.getElementById("kv-wrap").style.height = "75vh";
-    document.getElementsByClassName("site-name-wrap")[0].style.height = "75vh";
+    alert("ipadだよ");
     let elm = document.getElementsByTagName("html")[0];
     elm.style.transformOrigin = "top left";
     elm.style.transform = "scale(0.5)";
