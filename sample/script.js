@@ -1,36 +1,19 @@
 (function () {
-  var change_scale = {
-    //
-    container: 500,
-    percent: 1,
-    function: function () {
-      "use strict";
-      if (change_scale.percent === window.devicePixelRatio) {
-        var scale = document.documentElement.clientWidth;
-        scale = scale / change_scale.container;
-        scale = "scale(" + scale + ")";
-        document.body.style.transform = scale;
-      } else {
-        change_scale.percent = window.devicePixelRatio;
-      }
-    },
-  };
-  (function () {
-    "use strict";
-    if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
-      if (window.devicePixelRatio !== 1) {
-        alert(
-          "申し訳ございません。スタイルが崩れている可能性があります。恐れ入りますが、倍率を100%に変更後、リロードしてください。"
-        );
-      }
-    }
-    change_scale.function();
-  })();
+  /* デバイスの確認※iOSかどうかを判定したい */
+  const ua = navigator.userAgent;
+  // iOS用処理 ※iOSはバグや特殊な仕様があるので、処理を分ける
+  const iosFlg = ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") > 0;
 
-  window.addEventListener("resize", function (event) {
-    "use strict";
-    change_scale.function();
-  });
+  if (iosFlg) {
+    document.getElementById("kv-wrap").style.height = "75vh";
+    document.getElementsByClassName("site-name-wrap")[0].style.height = "75vh";
+    let elm = document.getElementsByTagName("html")[0];
+    elm.style.transformOrigin = "top left";
+    elm.style.transform = "scale(0.5)";
+  } else {
+    console.log("not iPad");
+  }
+
   const width = new Vue({
     el: ".width",
     data: {
